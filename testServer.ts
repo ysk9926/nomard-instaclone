@@ -30,10 +30,11 @@ async function startApolloServer() {
     server.applyMiddleware({ app });
   });
 
-  app.listen({ port: PORT }, () => {
+  app.listen({ port: PORT }, () =>
     console.log(
       `Server is running on http://localhost:${PORT}${server.graphqlPath} `
-    );
-  });
+    )
+  );
 }
+
 startApolloServer();

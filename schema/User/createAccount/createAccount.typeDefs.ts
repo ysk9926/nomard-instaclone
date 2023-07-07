@@ -1,16 +1,16 @@
 import { gql } from "apollo-server-express";
 
 export default gql`
-  type CreateAccountResult {
+  type craeteAccountResult {
     ok: Boolean!
     error: String
   }
   type Mutation {
-    createAccount(
+    craeteAccount(
       userName: String!
       email: String!
       password: String!
       githubUsername: String!
-    ): CreateAccountResult!
+    ): craeteAccountResult!
   }
 `;
