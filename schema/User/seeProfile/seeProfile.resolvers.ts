@@ -1,6 +1,5 @@
 import client from "../../../client";
-import { IAccount } from "../user.interface";
-
+import { IAccount, IUser } from "../user.interface";
 export default {
   Query: {
     seeProfile: async (_: unknown, { userName }: IAccount) => {

@@ -20,6 +20,12 @@ export interface IUser {
   gitHubUsername: string;
   createdAt: any;
   updatedAt: any;
+  cursor: number;
+}
+
+export interface ISearchUser {
+  keyword: string;
+  cursor: number;
 }
 
 export interface IContext {
