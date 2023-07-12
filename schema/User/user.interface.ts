@@ -3,7 +3,7 @@ export interface IAccount {
   userName: string;
   email: string;
   password: string;
-  avatarURL: String;
+  avatarURL: string;
   githubUsername: string;
 }
 
@@ -29,7 +29,7 @@ export interface ISearchUser {
 }
 
 export interface IContext {
-  loggedInUser: IUser | null;
+  loggedInUser: IUser;
 }
 
 export interface IError {

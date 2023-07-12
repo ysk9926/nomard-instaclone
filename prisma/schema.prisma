@@ -17,8 +17,38 @@ model User {
   password  String
   avatarURL String?
   githubUsername String
-  follower User[] @relation("followRelation")
+  shops     Shop[]
+  follower  User[] @relation("followRelation")
   following User[] @relation("followRelation")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ShopPhoto {
+  id        Int      @id @default(autoincrement())
+  url       String   
+  shop      Shop     @relation(fields: [shopId], references: [id])
+  shopId    Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Shop {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  adress    String
+  user      User   @relation(fields: [userId], references: [id])
+  userId    Int
+  photos    ShopPhoto[]
+  categories  Category[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Category{
+  id        Int      @id @default(autoincrement()) 
+  slug      String   @unique
+  shops     Shop[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
